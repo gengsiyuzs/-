@@ -1,0 +1,117 @@
+page {
+	background-image: url('https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3080063092,3611217178&fm=26&gp=0.jpg');
+	background-size: cover;
+}
+
+.container {
+	padding: 20rpx;
+}
+
+/* 天气 */
+.weather {
+	padding: 20rpx;
+	height: 240rpx;
+	position: relative;
+	border-radius: 20rpx;
+	background: #9BCD9B;
+}
+
+/* 明天天气按钮 */
+.tommorrowWheather {
+	font-size: small;
+	font-weight: lighter;
+	width: 130rpx !important;
+	position: absolute;
+	right: 20rpx;
+	background: #BFEFFF;
+	padding: 10rpx 10rpx;
+}
+
+.weatherType {
+	color: #B8860B;
+	margin: 20rpx 0 0 20rpx;
+	display: block;
+}
+
+.weatherTemp {
+	color: #BC8F8F;
+	margin: 20rpx 0 0 20rpx;
+	display: block;
+}
+
+.weatherWind {
+	color: #AEEEEE;
+	margin: 20rpx 0 0 20rpx;
+	display: block;
+}
+
+.weatherImg {
+	position: absolute;
+	width: 100rpx;
+	height: 100rpx;
+	position: absolute;
+	right: 200rpx;
+	top: 30%;
+}
+
+/* 定位 */
+.location {
+	position: absolute;
+	top: 10rpx;
+	right: 10rpx;
+	padding: 10rpx 20rpx;
+	border-radius: 20rpx;
+	background: #FFD700;
+}
+
+/* 字体划出 */
+
+.textAnimate {
+	animation: slideContentUp 2.4s ease-in both;
+}
+
+@keyframes slideContentUp {
+	from {
+		transform: translateY(200%);
+		/*设置为正数则底部弹出来，负数则相反*/
+	}
+
+	to {
+		transform: translateY(0%);
+	}
+}
+
+/* 欢迎来到神奇的答题世界 */
+.welcomeTitle {
+	text-align: center;
+	display: block;
+	font-size: larger;
+	color: #9BCD9B;
+	margin-top: 20%;
+}
+
+/* 成为学霸的第一步 */
+.welcomeSecondTitle {
+	margin-top: 20%;
+	text-align: center;
+	display: block;
+	font-size: larger;
+	color: #9BCD9B;
+}
+
+/* 头像 */
+.userinfo-avatar {
+	margin-left: calc(50% - 75rpx);
+	width: 150rpx;
+	height: 150rpx;
+	border-radius: 50%;
+}
+
+/* 昵称 */
+.userinfo-nickname {
+	display: block;
+	color: #9BCD9B;
+	text-align: center;
+	font-size: 30rpx;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

@@ -1,0 +1,34 @@
+<!--pages/sleep/sleep.wxml-->
+
+<view class='container'>
+	<!--Tab布局-->
+	<view class='titleTab'>
+		<view class='titleSel' bindtap='titleClick' data-idx='0'>
+			<text class="{{0 == currentIndex ? 'titleSelect' : 'titleNoSelect'}}">图文</text>
+			<hr class="{{0 == currentIndex ? 'headerLineSel' : 'headerLineUnsel'}}" />
+		</view>
+
+		<view class='titleSel' bindtap='titleClick' data-idx='1'>
+			<text class="{{1 == currentIndex ? 'titleSelect' : 'titleNoSelect'}}">视频</text>
+			<hr class="{{1 == currentIndex ? 'headerLineSel' : 'headerLineUnsel'}} " />
+		</view>
+			<view class='titleSel' bindtap='titleClick' data-idx='2'>
+			<text class="{{2 == currentIndex ? 'titleSelect' : 'titleNoSelect'}}">猜你喜欢</text>
+			<hr class="{{2 == currentIndex ? 'headerLineSel' : 'headerLineUnsel'}} " />
+		</view>
+	</view>
+
+	<!--内容布局-->
+	<view class="joke">
+		<view class="info_body" wx:for="{{joke}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+			<image wx:if="{{item.header}}" data-src="{{item.header}}" bindtap='lookImg' class="headPortrait" src="{{item.header}}"></image>
+			<text class="name">{{item.name}}</text>
+			<text class="passtime">{{item.passtime}}</text>
+			<view>
+				<text class="title">{{item.text}}</text>
+				<image data-src="{{item.images}}" bindtap='lookImg' class="contentImg" mode="widthFix" wx:if="{{item.images}}" src="{{item.images}}"></image>
+				<video poster="{{item.thumbnail}}" class="contentVideo" wx:if="{{item.video}}" src="{{item.video}}"></video>
+			</view>
+		</view>
+	</view>
+</view>

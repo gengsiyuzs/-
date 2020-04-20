@@ -1,0 +1,5 @@
+<!--pages/about/about.wxml-->
+
+<view class="title">一路赢</view>
+<view class="con">集答题，娱乐于一身的小程序</view>
+<view class="foot">Copyright © 2020 - 2020 by gengsiyu All Rights Reserved.</view>

@@ -1,0 +1,144 @@
+<!--pages/home/home.wxml-->
+<!--mask-->
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+<!--content-->
+<!--使用animation属性指定需要执行的动画-->
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+
+	<!--drawer content-->
+	<view class="drawer_title">修改签名</view>
+	<view class="drawer_content">
+		<view class="top grid">
+			<label class="title col-0">签名</label>
+			<input class="input_base input_h30 col-1" bindblur="getSignatureVal" value="{{signature}}"></input>
+		</view>
+	</view>
+	<view class="btn_ok" bindtap="powerDrawer" data-statu="close">确定</view>
+</view>
+
+<form reportSubmit bindsubmit="submitFormId">
+	<!-- 头部卡片个人信息 -->
+	<view class="header">
+		<view class="user" hoverClass="none">
+			<view class="user_box">
+				<view catchtap="previewImage" class="logo">
+					<image src="{{userInfo.avatarUrl}}"></image>
+					<view class="cu-tag badge {{male==1?'icon-male bg-blue':'icon-female bg-pink'}}"></view>
+				</view>
+				<block wx:if="{{vip}}">
+					<view class="user_info">
+						<view class="user_name">
+							<text>{{userInfo.nickName}}</text>
+							<image src="/images/main/vip.png"></image>
+						</view>
+					</view>
+				</block>
+				<block wx:else>
+					<view class="user_info">
+						<view class="user_name">
+							<text>{{userInfo.nickName}}</text>
+						</view>
+						<!-- 个性签名 -->
+						<view class="vip_expires" bindtap="powerDrawer" data-statu="open">
+							{{signature}}
+						</view>
+					</view>
+				</block>
+			</view>
+		</view>
+		<!-- <image src='https://edu.qinhui88.com/assets/wx/image/wave.gif' mode='scaleToFill' class='gif-wave'></image> -->
+		<view class="info">
+			<view class="item" bindtap=''>
+				<text class="title">坚持学习/{{practiceday}}天</text>
+			</view>
+			<view class="item">
+				<text class="title">学习时长/{{studytime}}分钟</text>
+			</view>
+			<view class="item">
+				<text class="title">完成练习/{{practicetime}}节</text>
+			</view>
+		</view>
+	</view>
+	<!-- 功能列表 -->
+	<view class="nav">
+		<view bindtap="openPage" class="item" data-url="/pages/my_course/my_course" formType="submit" hoverClass="none">
+			<view class='wallet'>
+				<text class='icon-news icon'></text>
+				<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
+				<text>我的课程</text>
+			</view>
+			<view class="icon">
+				<text class='icon-right'></text>
+			</view>
+		</view>
+		<view bindtap="openPage" class="item" data-url="/pages/collect/collect" formType="submit" hoverClass="none">
+			<view class='wallet'>
+				<text class='icon-favor icon'></text>
+				<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
+				<text>我的收藏</text>
+			</view>
+			<view class="icon">
+				<text class='icon-right'></text>
+			</view>
+		</view>
+		<view bindtap="openPage" class="item" data-url="/pages/wallet/wallet" formType="submit" hoverClass="none">
+			<view class='wallet'>
+				<text class='icon-moneybag icon'></text>
+				<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
+				<text>我的钱包</text>
+			</view>
+			<view class="icon">
+				<text class='icon-right'></text>
+			</view>
+		</view>
+		<view bindtap="openPage" class="item" data-url="/pages/purchase_history/purchase_history" formType="submit" hoverClass="none">
+			<view class='wallet'>
+				<text class='icon-form icon'></text>
+				<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
+				<text>我的订单</text>
+			</view>
+			<view class="icon">
+				<text class='icon-right'></text>
+			</view>
+		</view>
+		<button bindtap="chooseGeren" class="item">
+			<view class='wallet'>
+				<text class='icon-location icon'></text>
+				<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
+				<text>我的地址</text>
+			</view>
+			<view class="icon">
+				<text class='icon-right'></text>
+			</view>
+		</button>
+		<view bindtap="openPage" class="item" data-url="/pages/about/about" formType="submit" hoverClass="none">
+			<view class='wallet'>
+				<text class='icon-info icon'></text>
+				<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
+				<text>关于我们</text>
+			</view>
+			<view class="icon">
+				<text class='icon-right'></text>
+			</view>
+		</view>
+
+		<button class="item" bindtap='changeView'>
+			<view class='wallet'>
+				<text class='icon-settings icon'></text>
+				<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
+				<text>设置中心</text>
+			</view>
+			<view class="icon">
+				<text class='icon-right'></text>
+			</view>
+		</button>
+		<button class="item" formType="submit" hoverClass="none" openType="contact">
+			<view class='wallet'>
+				<text class='icon-service icon'></text>
+				<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
+				<text>联系客服</text>
+			</view>
+			
+		</button>
+	</view>
+</form>

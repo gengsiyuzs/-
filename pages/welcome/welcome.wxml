@@ -1,0 +1,32 @@
+<view class="weather">
+	<text class="weatherType">今天天气{{weather.weather}}</text>
+	<text class="weatherWind">{{weather.wind}}</text>
+	<text class="weatherTemp">温度{{weather.temp}}</text>
+	<image class="weatherImg" animation="{{animation}}" src="{{weather.weatherimg}}" mode="cover"></image>
+	<text class="location">{{currentLocation}}</text>
+	<button class="tommorrowWheather" wx:if="{{hasTommorrowWeather}}" bindtap="getTommorrowWeather">明日天气</button>
+</view>
+<view class="container">
+	<view>
+
+		<block wx:if="{{hasUserInfo}}">
+
+			<view class="userinfo">
+				<button wx:if="{{!hasUserInfo}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button>
+				<block wx:else>
+					<image animation="{{animation}}" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover" bindtap="gotoIndex"></image>
+					<text class="userinfo-nickname">{{userInfo.nickName}}</text>
+				</block>
+			</view>
+			<view class="usermotto">
+				<text class="user-motto">{{motto}}</text>
+			</view>
+		</block>
+		<button wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+		<view class="textAnimate">
+			<text class="welcomeTitle">欢迎来到神奇的答题世界</text>
+			<text class="welcomeSecondTitle">成为学霸的第一步</text>
+		</view>
+
+	</view>
+</view>

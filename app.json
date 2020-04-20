@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/index/index",
+    "pages/sleep/sleep",
+    "pages/home/home",
+    "pages/about/about"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#13227a",
+    "navigationBarTitleText": "答题小能手",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+
+  "tabBar": {
+
+    "selectedColor": "#13227a",
+    "list": [
+      {
+        "text": "首页",
+        "iconPath": "./image/home.png",
+        "selectedIconPath": "./image/home1.png",
+        "pagePath": "pages/index/index"
+      },
+      {
+        "text": "小憩",
+        "iconPath": "./image/xiaoqi1.png",
+        "selectedIconPath": "./image/xiaoqi.png",
+        "pagePath": "pages/sleep/sleep"
+      },
+      {
+        "text": "我的",
+        "iconPath": "./image/my.png",
+        "selectedIconPath": "./image/my1.png",
+        "pagePath": "pages/home/home"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
